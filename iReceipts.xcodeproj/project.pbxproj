@@ -13,6 +13,30 @@
 		5E71BBB41B9E5CB900628AFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E71BBB31B9E5CB900628AFA /* Images.xcassets */; };
 		5E71BBB71B9E5CB900628AFA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E71BBB51B9E5CB900628AFA /* LaunchScreen.xib */; };
 		5E71BBC31B9E5CB900628AFA /* iReceiptsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E71BBC21B9E5CB900628AFA /* iReceiptsTests.swift */; };
+		5EA865A31B9F8D9F006F57D9 /* businessf.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA8659F1B9F8D9F006F57D9 /* businessf.png */; };
+		5EA865A51B9F8D9F006F57D9 /* personalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865A11B9F8D9F006F57D9 /* personalf.png */; };
+		5EA865A91B9F8ECF006F57D9 /* businessuf.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865A71B9F8ECF006F57D9 /* businessuf.png */; };
+		5EA865AA1B9F8ECF006F57D9 /* personaluf.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865A81B9F8ECF006F57D9 /* personaluf.png */; };
+		5EA865AD1B9F97C4006F57D9 /* paymentf.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865AB1B9F97C4006F57D9 /* paymentf.png */; };
+		5EA865AE1B9F97C4006F57D9 /* paymentuf.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865AC1B9F97C4006F57D9 /* paymentuf.png */; };
+		5EA865B11B9F9C6C006F57D9 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865AF1B9F9C6C006F57D9 /* checked.png */; };
+		5EA865B21B9F9C6C006F57D9 /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865B01B9F9C6C006F57D9 /* unchecked.png */; };
+		5EA865B61BA23F2C006F57D9 /* itpurectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865B51BA23F2C006F57D9 /* itpurectangle.png */; };
+		5EA865B91BA241E0006F57D9 /* itpurectanglem.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865B71BA241E0006F57D9 /* itpurectanglem.png */; };
+		5EA865BA1BA241E0006F57D9 /* itpurectangles.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865B81BA241E0006F57D9 /* itpurectangles.png */; };
+		5EA865BC1BA2472F006F57D9 /* nRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA865BB1BA2472F006F57D9 /* nRecViewController.swift */; };
+		5EA865BE1BA24D2E006F57D9 /* listOfTrips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA865BD1BA24D2E006F57D9 /* listOfTrips.swift */; };
+		5EA865C01BA25D0D006F57D9 /* individualTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA865BF1BA25D0D006F57D9 /* individualTrip.swift */; };
+		5EA865C61BA2695F006F57D9 /* creditCardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA865C51BA2695F006F57D9 /* creditCardList.swift */; };
+		5EA865C81BA26970006F57D9 /* individualCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA865C71BA26970006F57D9 /* individualCard.swift */; };
+		5EA865CA1BA383DB006F57D9 /* chooseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA865C91BA383DB006F57D9 /* chooseCard.swift */; };
+		5EA865CC1BA3878E006F57D9 /* datePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA865CB1BA3878E006F57D9 /* datePicker.swift */; };
+		5EA865CE1BA4865D006F57D9 /* chooseTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA865CD1BA4865D006F57D9 /* chooseTrip.swift */; };
+		5EA865D01BA8DBE6006F57D9 /* imageoutline.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865CF1BA8DBE6006F57D9 /* imageoutline.png */; };
+		5EA865D61BA8DD3C006F57D9 /* photo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865D51BA8DD3C006F57D9 /* photo2.png */; };
+		5EA865D81BA8DE20006F57D9 /* chooseImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA865D71BA8DE20006F57D9 /* chooseImage.swift */; };
+		5EA865DA1BA8E013006F57D9 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865D91BA8E013006F57D9 /* camera.png */; };
+		5EA865DE1BA8E1A5006F57D9 /* imageborder.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865DD1BA8E1A5006F57D9 /* imageborder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +60,30 @@
 		5E71BBBC1B9E5CB900628AFA /* iReceiptsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iReceiptsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E71BBC11B9E5CB900628AFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E71BBC21B9E5CB900628AFA /* iReceiptsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iReceiptsTests.swift; sourceTree = "<group>"; };
+		5EA8659F1B9F8D9F006F57D9 /* businessf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = businessf.png; sourceTree = "<group>"; };
+		5EA865A11B9F8D9F006F57D9 /* personalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personalf.png; sourceTree = "<group>"; };
+		5EA865A71B9F8ECF006F57D9 /* businessuf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = businessuf.png; sourceTree = "<group>"; };
+		5EA865A81B9F8ECF006F57D9 /* personaluf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personaluf.png; sourceTree = "<group>"; };
+		5EA865AB1B9F97C4006F57D9 /* paymentf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paymentf.png; sourceTree = "<group>"; };
+		5EA865AC1B9F97C4006F57D9 /* paymentuf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paymentuf.png; sourceTree = "<group>"; };
+		5EA865AF1B9F9C6C006F57D9 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		5EA865B01B9F9C6C006F57D9 /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
+		5EA865B51BA23F2C006F57D9 /* itpurectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = itpurectangle.png; sourceTree = "<group>"; };
+		5EA865B71BA241E0006F57D9 /* itpurectanglem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = itpurectanglem.png; sourceTree = "<group>"; };
+		5EA865B81BA241E0006F57D9 /* itpurectangles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = itpurectangles.png; sourceTree = "<group>"; };
+		5EA865BB1BA2472F006F57D9 /* nRecViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nRecViewController.swift; sourceTree = "<group>"; };
+		5EA865BD1BA24D2E006F57D9 /* listOfTrips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listOfTrips.swift; sourceTree = "<group>"; };
+		5EA865BF1BA25D0D006F57D9 /* individualTrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = individualTrip.swift; sourceTree = "<group>"; };
+		5EA865C51BA2695F006F57D9 /* creditCardList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = creditCardList.swift; sourceTree = "<group>"; };
+		5EA865C71BA26970006F57D9 /* individualCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = individualCard.swift; sourceTree = "<group>"; };
+		5EA865C91BA383DB006F57D9 /* chooseCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chooseCard.swift; sourceTree = "<group>"; };
+		5EA865CB1BA3878E006F57D9 /* datePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = datePicker.swift; sourceTree = "<group>"; };
+		5EA865CD1BA4865D006F57D9 /* chooseTrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chooseTrip.swift; sourceTree = "<group>"; };
+		5EA865CF1BA8DBE6006F57D9 /* imageoutline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageoutline.png; sourceTree = "<group>"; };
+		5EA865D51BA8DD3C006F57D9 /* photo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo2.png; sourceTree = "<group>"; };
+		5EA865D71BA8DE20006F57D9 /* chooseImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chooseImage.swift; sourceTree = "<group>"; };
+		5EA865D91BA8E013006F57D9 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		5EA865DD1BA8E1A5006F57D9 /* imageborder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageborder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +127,31 @@
 			children = (
 				5E71BBAC1B9E5CB900628AFA /* AppDelegate.swift */,
 				5E71BBAE1B9E5CB900628AFA /* ViewController.swift */,
+				5EA865BB1BA2472F006F57D9 /* nRecViewController.swift */,
+				5EA865C91BA383DB006F57D9 /* chooseCard.swift */,
+				5EA865CD1BA4865D006F57D9 /* chooseTrip.swift */,
+				5EA865CB1BA3878E006F57D9 /* datePicker.swift */,
+				5EA865BD1BA24D2E006F57D9 /* listOfTrips.swift */,
+				5EA865BF1BA25D0D006F57D9 /* individualTrip.swift */,
+				5EA865C51BA2695F006F57D9 /* creditCardList.swift */,
+				5EA865C71BA26970006F57D9 /* individualCard.swift */,
+				5EA865D71BA8DE20006F57D9 /* chooseImage.swift */,
 				5E71BBB01B9E5CB900628AFA /* Main.storyboard */,
+				5EA8659F1B9F8D9F006F57D9 /* businessf.png */,
+				5EA865A11B9F8D9F006F57D9 /* personalf.png */,
+				5EA865A71B9F8ECF006F57D9 /* businessuf.png */,
+				5EA865A81B9F8ECF006F57D9 /* personaluf.png */,
+				5EA865AB1B9F97C4006F57D9 /* paymentf.png */,
+				5EA865AC1B9F97C4006F57D9 /* paymentuf.png */,
+				5EA865AF1B9F9C6C006F57D9 /* checked.png */,
+				5EA865B01B9F9C6C006F57D9 /* unchecked.png */,
+				5EA865B51BA23F2C006F57D9 /* itpurectangle.png */,
+				5EA865B71BA241E0006F57D9 /* itpurectanglem.png */,
+				5EA865B81BA241E0006F57D9 /* itpurectangles.png */,
+				5EA865CF1BA8DBE6006F57D9 /* imageoutline.png */,
+				5EA865D51BA8DD3C006F57D9 /* photo2.png */,
+				5EA865D91BA8E013006F57D9 /* camera.png */,
+				5EA865DD1BA8E1A5006F57D9 /* imageborder.png */,
 				5E71BBB31B9E5CB900628AFA /* Images.xcassets */,
 				5E71BBB51B9E5CB900628AFA /* LaunchScreen.xib */,
 				5E71BBAA1B9E5CB900628AFA /* Supporting Files */,
@@ -156,6 +228,7 @@
 		5E71BB9F1B9E5CB900628AFA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "George Saieed";
 				TargetAttributes = {
@@ -192,9 +265,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA865AA1B9F8ECF006F57D9 /* personaluf.png in Resources */,
+				5EA865D61BA8DD3C006F57D9 /* photo2.png in Resources */,
+				5EA865B21B9F9C6C006F57D9 /* unchecked.png in Resources */,
+				5EA865DE1BA8E1A5006F57D9 /* imageborder.png in Resources */,
+				5EA865A91B9F8ECF006F57D9 /* businessuf.png in Resources */,
+				5EA865BA1BA241E0006F57D9 /* itpurectangles.png in Resources */,
+				5EA865B91BA241E0006F57D9 /* itpurectanglem.png in Resources */,
 				5E71BBB21B9E5CB900628AFA /* Main.storyboard in Resources */,
+				5EA865AD1B9F97C4006F57D9 /* paymentf.png in Resources */,
 				5E71BBB71B9E5CB900628AFA /* LaunchScreen.xib in Resources */,
+				5EA865B11B9F9C6C006F57D9 /* checked.png in Resources */,
+				5EA865AE1B9F97C4006F57D9 /* paymentuf.png in Resources */,
+				5EA865A31B9F8D9F006F57D9 /* businessf.png in Resources */,
+				5EA865A51B9F8D9F006F57D9 /* personalf.png in Resources */,
 				5E71BBB41B9E5CB900628AFA /* Images.xcassets in Resources */,
+				5EA865DA1BA8E013006F57D9 /* camera.png in Resources */,
+				5EA865B61BA23F2C006F57D9 /* itpurectangle.png in Resources */,
+				5EA865D01BA8DBE6006F57D9 /* imageoutline.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +300,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA865C61BA2695F006F57D9 /* creditCardList.swift in Sources */,
+				5EA865BC1BA2472F006F57D9 /* nRecViewController.swift in Sources */,
 				5E71BBAF1B9E5CB900628AFA /* ViewController.swift in Sources */,
+				5EA865CC1BA3878E006F57D9 /* datePicker.swift in Sources */,
 				5E71BBAD1B9E5CB900628AFA /* AppDelegate.swift in Sources */,
+				5EA865C81BA26970006F57D9 /* individualCard.swift in Sources */,
+				5EA865BE1BA24D2E006F57D9 /* listOfTrips.swift in Sources */,
+				5EA865D81BA8DE20006F57D9 /* chooseImage.swift in Sources */,
+				5EA865CE1BA4865D006F57D9 /* chooseTrip.swift in Sources */,
+				5EA865CA1BA383DB006F57D9 /* chooseCard.swift in Sources */,
+				5EA865C01BA25D0D006F57D9 /* individualTrip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +506,7 @@
 				5E71BBC81B9E5CB900628AFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E71BBC91B9E5CB900628AFA /* Build configuration list for PBXNativeTarget "iReceiptsTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +515,7 @@
 				5E71BBCB1B9E5CB900628AFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
