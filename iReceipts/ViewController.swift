@@ -9,11 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var buttonBlah: UIButton!
     
-    @IBAction func ifClicked(sender: AnyObject) {
-        buttonBlah.setTitle("ANAND", forState: .Normal)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

@@ -37,6 +37,16 @@
 		5EA865D81BA8DE20006F57D9 /* chooseImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA865D71BA8DE20006F57D9 /* chooseImage.swift */; };
 		5EA865DA1BA8E013006F57D9 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865D91BA8E013006F57D9 /* camera.png */; };
 		5EA865DE1BA8E1A5006F57D9 /* imageborder.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA865DD1BA8E1A5006F57D9 /* imageborder.png */; };
+		5EAA067B1CC2CBB800628730 /* itemPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAA067A1CC2CBB800628730 /* itemPicker.swift */; };
+		5EBF2DDE1CC30F5400C84A4F /* receiptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF2DDD1CC30F5400C84A4F /* receiptController.swift */; };
+		5EBF2DE21CC3194D00C84A4F /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EBF2DE11CC3194D00C84A4F /* delete.png */; };
+		5EBF2DE91CC31E8800C84A4F /* businessreceipt.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EBF2DE71CC31E8800C84A4F /* businessreceipt.png */; };
+		5EBF2DEA1CC31E8800C84A4F /* personalreceipt.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EBF2DE81CC31E8800C84A4F /* personalreceipt.png */; };
+		5EBF2DEC1CC3281D00C84A4F /* receiptTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF2DEB1CC3281D00C84A4F /* receiptTableCell.swift */; };
+		5EBF2DEE1CC3325F00C84A4F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF2DED1CC3325F00C84A4F /* Data.swift */; };
+		5EBF2DF11CC341FB00C84A4F /* personalback.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EBF2DEF1CC341FB00C84A4F /* personalback.png */; };
+		5EBF2DF21CC341FB00C84A4F /* businessback.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EBF2DF01CC341FB00C84A4F /* businessback.png */; };
+		5EBF2DF81CC3499900C84A4F /* singleReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF2DF71CC3499900C84A4F /* singleReceipt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +94,16 @@
 		5EA865D71BA8DE20006F57D9 /* chooseImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chooseImage.swift; sourceTree = "<group>"; };
 		5EA865D91BA8E013006F57D9 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		5EA865DD1BA8E1A5006F57D9 /* imageborder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageborder.png; sourceTree = "<group>"; };
+		5EAA067A1CC2CBB800628730 /* itemPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = itemPicker.swift; sourceTree = "<group>"; };
+		5EBF2DDD1CC30F5400C84A4F /* receiptController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = receiptController.swift; sourceTree = "<group>"; };
+		5EBF2DE11CC3194D00C84A4F /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		5EBF2DE71CC31E8800C84A4F /* businessreceipt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = businessreceipt.png; sourceTree = "<group>"; };
+		5EBF2DE81CC31E8800C84A4F /* personalreceipt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personalreceipt.png; sourceTree = "<group>"; };
+		5EBF2DEB1CC3281D00C84A4F /* receiptTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = receiptTableCell.swift; sourceTree = "<group>"; };
+		5EBF2DED1CC3325F00C84A4F /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		5EBF2DEF1CC341FB00C84A4F /* personalback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personalback.png; sourceTree = "<group>"; };
+		5EBF2DF01CC341FB00C84A4F /* businessback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = businessback.png; sourceTree = "<group>"; };
+		5EBF2DF71CC3499900C84A4F /* singleReceipt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = singleReceipt.swift; path = ../singleReceipt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +145,7 @@
 		5E71BBA91B9E5CB900628AFA /* iReceipts */ = {
 			isa = PBXGroup;
 			children = (
+				5EBF2DF71CC3499900C84A4F /* singleReceipt.swift */,
 				5E71BBAC1B9E5CB900628AFA /* AppDelegate.swift */,
 				5E71BBAE1B9E5CB900628AFA /* ViewController.swift */,
 				5EA865BB1BA2472F006F57D9 /* nRecViewController.swift */,
@@ -136,7 +157,15 @@
 				5EA865C51BA2695F006F57D9 /* creditCardList.swift */,
 				5EA865C71BA26970006F57D9 /* individualCard.swift */,
 				5EA865D71BA8DE20006F57D9 /* chooseImage.swift */,
+				5EAA067A1CC2CBB800628730 /* itemPicker.swift */,
+				5EBF2DDD1CC30F5400C84A4F /* receiptController.swift */,
+				5EBF2DEB1CC3281D00C84A4F /* receiptTableCell.swift */,
 				5E71BBB01B9E5CB900628AFA /* Main.storyboard */,
+				5EBF2DEF1CC341FB00C84A4F /* personalback.png */,
+				5EBF2DF01CC341FB00C84A4F /* businessback.png */,
+				5EBF2DE71CC31E8800C84A4F /* businessreceipt.png */,
+				5EBF2DE81CC31E8800C84A4F /* personalreceipt.png */,
+				5EBF2DE11CC3194D00C84A4F /* delete.png */,
 				5EA8659F1B9F8D9F006F57D9 /* businessf.png */,
 				5EA865A11B9F8D9F006F57D9 /* personalf.png */,
 				5EA865A71B9F8ECF006F57D9 /* businessuf.png */,
@@ -155,6 +184,7 @@
 				5E71BBB31B9E5CB900628AFA /* Images.xcassets */,
 				5E71BBB51B9E5CB900628AFA /* LaunchScreen.xib */,
 				5E71BBAA1B9E5CB900628AFA /* Supporting Files */,
+				5EBF2DED1CC3325F00C84A4F /* Data.swift */,
 			);
 			path = iReceipts;
 			sourceTree = "<group>";
@@ -267,9 +297,12 @@
 			files = (
 				5EA865AA1B9F8ECF006F57D9 /* personaluf.png in Resources */,
 				5EA865D61BA8DD3C006F57D9 /* photo2.png in Resources */,
+				5EBF2DE91CC31E8800C84A4F /* businessreceipt.png in Resources */,
 				5EA865B21B9F9C6C006F57D9 /* unchecked.png in Resources */,
+				5EBF2DF21CC341FB00C84A4F /* businessback.png in Resources */,
 				5EA865DE1BA8E1A5006F57D9 /* imageborder.png in Resources */,
 				5EA865A91B9F8ECF006F57D9 /* businessuf.png in Resources */,
+				5EBF2DEA1CC31E8800C84A4F /* personalreceipt.png in Resources */,
 				5EA865BA1BA241E0006F57D9 /* itpurectangles.png in Resources */,
 				5EA865B91BA241E0006F57D9 /* itpurectanglem.png in Resources */,
 				5E71BBB21B9E5CB900628AFA /* Main.storyboard in Resources */,
@@ -279,8 +312,10 @@
 				5EA865AE1B9F97C4006F57D9 /* paymentuf.png in Resources */,
 				5EA865A31B9F8D9F006F57D9 /* businessf.png in Resources */,
 				5EA865A51B9F8D9F006F57D9 /* personalf.png in Resources */,
+				5EBF2DF11CC341FB00C84A4F /* personalback.png in Resources */,
 				5E71BBB41B9E5CB900628AFA /* Images.xcassets in Resources */,
 				5EA865DA1BA8E013006F57D9 /* camera.png in Resources */,
+				5EBF2DE21CC3194D00C84A4F /* delete.png in Resources */,
 				5EA865B61BA23F2C006F57D9 /* itpurectangle.png in Resources */,
 				5EA865D01BA8DBE6006F57D9 /* imageoutline.png in Resources */,
 			);
@@ -301,16 +336,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EA865C61BA2695F006F57D9 /* creditCardList.swift in Sources */,
+				5EBF2DEE1CC3325F00C84A4F /* Data.swift in Sources */,
 				5EA865BC1BA2472F006F57D9 /* nRecViewController.swift in Sources */,
 				5E71BBAF1B9E5CB900628AFA /* ViewController.swift in Sources */,
 				5EA865CC1BA3878E006F57D9 /* datePicker.swift in Sources */,
+				5EAA067B1CC2CBB800628730 /* itemPicker.swift in Sources */,
 				5E71BBAD1B9E5CB900628AFA /* AppDelegate.swift in Sources */,
 				5EA865C81BA26970006F57D9 /* individualCard.swift in Sources */,
+				5EBF2DDE1CC30F5400C84A4F /* receiptController.swift in Sources */,
 				5EA865BE1BA24D2E006F57D9 /* listOfTrips.swift in Sources */,
 				5EA865D81BA8DE20006F57D9 /* chooseImage.swift in Sources */,
 				5EA865CE1BA4865D006F57D9 /* chooseTrip.swift in Sources */,
+				5EBF2DF81CC3499900C84A4F /* singleReceipt.swift in Sources */,
 				5EA865CA1BA383DB006F57D9 /* chooseCard.swift in Sources */,
 				5EA865C01BA25D0D006F57D9 /* individualTrip.swift in Sources */,
+				5EBF2DEC1CC3281D00C84A4F /* receiptTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,10 +11,10 @@ import UIKit
 
 //dictionary to temporarily store receipt
 var individualReceipt =
-["receiptType": "personal",
+["receiptType": "Personal",
     "itemName":"",
     "itemPrice": "",
-    "itemPayment":"cash",
+    "itemPayment":"Cash",
     "cardType":"",
     "purchaseDate":"",
     "returnTime":"",
@@ -25,7 +25,7 @@ var individualReceipt =
     "nameOfTrip":""]
 var pickerType = ""
 var updateLabels = false
-var finalReceiptImage: UIImage = UIImage(named:"photo2")!
+var finalReceiptImage: UIImage = UIImage()
 
 class nRecViewController: UIViewController {
     
@@ -43,7 +43,7 @@ class nRecViewController: UIViewController {
         let image2 = UIImage(named: "businessuf.png")
         personalOut.setBackgroundImage(image, forState: UIControlState.Normal)
         businessOut.setBackgroundImage(image2, forState: UIControlState.Normal)
-        individualReceipt["receiptType"] = "personal"
+        individualReceipt["receiptType"] = "Personal"
         
     }
     @IBAction func businessButton(sender: AnyObject) {
@@ -51,7 +51,7 @@ class nRecViewController: UIViewController {
         let image2 = UIImage(named: "businessf.png")
         personalOut.setBackgroundImage(image, forState: UIControlState.Normal)
         businessOut.setBackgroundImage(image2, forState: UIControlState.Normal)
-        individualReceipt["receiptType"] = "business"
+        individualReceipt["receiptType"] = "Business"
     }
     
     @IBOutlet var cashOut: UIButton!
@@ -65,7 +65,7 @@ class nRecViewController: UIViewController {
         cardOut.setBackgroundImage(image2, forState: UIControlState.Normal)
         cashOut.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         cardOut.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        individualReceipt["itemPayment"] = "cash"
+        individualReceipt["itemPayment"] = "Cash"
         individualReceipt["cardType"] = ""
         cardTypeOut.setTitle("", forState: UIControlState.Normal)
         cardTypeOut.enabled = false
@@ -86,7 +86,7 @@ class nRecViewController: UIViewController {
             if listOfCardsItems.count > 1 {
                 self.performSegueWithIdentifier("chooseCardSegue", sender: self)
             }
-            individualReceipt["itemPayment"] = "card"
+            individualReceipt["itemPayment"] = "Card"
         }
         else {
             cardTypeOut.setTitle("Add a Card in Settings", forState: UIControlState.Normal)
@@ -113,7 +113,7 @@ class nRecViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        if updateLabels == true && individualReceipt["itemPayment"] == "card" {
+        if updateLabels == true && individualReceipt["itemPayment"] == "Card" {
             cardTypeOut.setTitle(individualReceipt["cardType"] as? String, forState: UIControlState.Normal)
         }
         if updateLabels == true && individualReceipt["partOfTrip"] == true {
@@ -213,7 +213,7 @@ class nRecViewController: UIViewController {
         let image2 = UIImage(named: "businessuf.png")
         personalOut.setBackgroundImage(image, forState: UIControlState.Normal)
         businessOut.setBackgroundImage(image2, forState: UIControlState.Normal)
-        individualReceipt["receiptType"] = "personal"
+        individualReceipt["receiptType"] = "Personal"
         
         individualReceipt["itemName"] = ""
         itemPurchased.text = ""
@@ -221,7 +221,7 @@ class nRecViewController: UIViewController {
         individualReceipt["itemPrice"] = ""
         purchasePrice.text = ""
         
-        individualReceipt["itemPayment"] = "cash"
+        individualReceipt["itemPayment"] = "Cash"
         
         cardTypeOut.enabled = false
         cardTypeOut.setTitle("", forState: UIControlState.Normal)
@@ -242,9 +242,69 @@ class nRecViewController: UIViewController {
         nameOfTripOut.setTitle("", forState: UIControlState.Normal)
         
         updateLabels = false
-        finalReceiptImage = UIImage(named:"photo2")!
+        finalReceiptImage = UIImage()
         self.performSegueWithIdentifier("backToReceiptsSegue", sender: self)
     }
+    
+    @IBAction func theSaveButton(sender: AnyObject) {
+        data.append([
+            "receiptImage": finalReceiptImage,
+            "receiptType": individualReceipt["receiptType"]!,
+            "receiptBackground": individualReceipt["receiptType"]!,
+            "receiptPageBackground": individualReceipt["receiptType"]!,
+            "receiptCost": purchasePrice.text!,
+            "purchaseMethod": individualReceipt["itemPayment"]!,
+            "cardType": individualReceipt["cardType"]!,
+            "purchaseDate": dateOut.titleLabel!.text!,
+            "returnBy": "",
+            "returnTime": returnInDays.text!,
+            "keeping": "Keeping it",
+            "noKeepSwitch": false,
+            "reminders": individualReceipt["reminders"]!,
+            "purchasedAt": purchasedAt.text!,
+            "address": address.text!,
+            "partOfTrip": individualReceipt["partOfTrip"]!,
+            "nameOfTrip": individualReceipt["nameOfTrip"]!,
+            "receiptName": itemPurchased.text!,
+            ])
+        print(data)
+        let image = UIImage(named: "personalf.png")as UIImage!
+        let image2 = UIImage(named: "businessuf.png")
+        personalOut.setBackgroundImage(image, forState: UIControlState.Normal)
+        businessOut.setBackgroundImage(image2, forState: UIControlState.Normal)
+        individualReceipt["receiptType"] = "Personal"
+        
+        individualReceipt["itemName"] = ""
+        itemPurchased.text = ""
+        
+        individualReceipt["itemPrice"] = ""
+        purchasePrice.text = ""
+        
+        individualReceipt["itemPayment"] = "Cash"
+        
+        cardTypeOut.enabled = false
+        cardTypeOut.setTitle("", forState: UIControlState.Normal)
+        
+        individualReceipt["returnTime"] = ""
+        returnInDays.text = ""
+        
+        individualReceipt["reminders"] = true
+        
+        individualReceipt["purchasedAt"] = ""
+        purchasedAt.text = ""
+        
+        individualReceipt["address"] = ""
+        address.text = ""
+        
+        individualReceipt["partOfTrip"] = false
+        nameOfTripOut.enabled = false
+        nameOfTripOut.setTitle("", forState: UIControlState.Normal)
+
+        updateLabels = false
+        finalReceiptImage = UIImage()
+        self.performSegueWithIdentifier("backToReceiptsSegue", sender: self)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
