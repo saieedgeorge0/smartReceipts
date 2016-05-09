@@ -8,6 +8,7 @@
 
 import UIKit
 var aGlobalReceipt = data[0]
+var currentIndex = 0
 class receiptController: UITableViewController, receiptTableCellDelegate {
     
     override func viewDidAppear(animated: Bool) {
@@ -17,6 +18,7 @@ class receiptController: UITableViewController, receiptTableCellDelegate {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
+        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -25,7 +27,7 @@ class receiptController: UITableViewController, receiptTableCellDelegate {
         let receipt = data[indexPath.row]
         cell.configureWithReceipt(receipt)
         cell.delegate = self
-        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         return cell
     }
     
@@ -34,6 +36,7 @@ class receiptController: UITableViewController, receiptTableCellDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let receipt = data[indexPath.row]
         aGlobalReceipt = receipt
+        currentIndex = indexPath.row
         performSegueWithIdentifier("ReceiptSegue", sender: self)
     }
     

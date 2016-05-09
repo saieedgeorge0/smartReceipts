@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 var receiptItemsList = [String]()
 var receiptPriceItemsList = [Float]()
+var currentReceiptItems = [[String:String]]()
 class itemPicker: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var saved: UILabel!
@@ -23,10 +24,8 @@ class itemPicker: UIViewController, UITableViewDelegate, UITableViewDataSource {
             receiptItemsList.append(anItem)
             receiptPriceItemsList.append(anItemPrice!)
             saved.text = "Saved!"
-            aGlobalReceipt["items"] = [
-                "name": anItem,
-                "price": anItemPriceText
-            ] as AnyObject?
+            currentReceiptItems.append(["name": anItem, "price": String(format:"%.2f", anItemPrice!)])
+            print(currentReceiptItems)
             itemName.text = ""
             itemPrice.text = ""
         }
@@ -46,6 +45,7 @@ class itemPicker: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     override func viewDidAppear(animated: Bool) {
+        updateLabels = true
         receiptItems.reloadData()
     }
     
@@ -61,6 +61,8 @@ class itemPicker: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let item = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath) as! UITableViewCell
         item.textLabel?.text = receiptItemsList[indexPath.row] + " - $" + String(format:"%.2f",receiptPriceItemsList[indexPath.row])
+        titleFont.font = UIFont(name: "HelveticaNeue-Light", size: 18)!
+        item.textLabel?.font = titleFont.font
         return item
     }
     

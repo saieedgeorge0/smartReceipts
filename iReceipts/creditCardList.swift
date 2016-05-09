@@ -35,6 +35,8 @@ class creditCardList: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CardCell", forIndexPath: indexPath) as! UITableViewCell
         cell.textLabel?.text = listOfCardsItems[indexPath.row]
+        titleFont.font = UIFont(name: "HelveticaNeue-Light", size: 18)!
+        cell.textLabel?.font = titleFont.font
         return cell
     }
     

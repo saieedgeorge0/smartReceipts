@@ -1,5 +1,5 @@
 //
-//  listOfTrips.swift
+//  creditCardList.swift
 //  iReceipts
 //
 //  Created by George Saieed on 9/10/15.
@@ -8,25 +8,19 @@
 
 import Foundation
 import UIKit
-var tripListItems = [String]()
-var tempTripID: Int = 0
-
-class listOfTrips: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet var tripList: UITableView!
+var listOfRemindersItems = [String]()
+class remindersList: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet var listOfReminders: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.tripList.delegate = self
-        self.tripList.dataSource = self
+        self.listOfReminders.delegate = self
+        self.listOfReminders.dataSource = self
+        listOfReminders.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
-        tripList.reloadData()
-    }
-    
-    @IBAction func addTrip(sender: AnyObject) {
-        tripListItems.append("New Trip - Tap to Edit")
-        tripList.reloadData()
+        listOfReminders.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,12 +29,12 @@ class listOfTrips: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tripListItems.count;
+        return listOfRemindersItems.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TripCell", forIndexPath: indexPath) as! UITableViewCell
-        cell.textLabel?.text = tripListItems[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("ReminderCell", forIndexPath: indexPath) as! UITableViewCell
+        cell.textLabel?.text = listOfRemindersItems[indexPath.row] + " days before"
         titleFont.font = UIFont(name: "HelveticaNeue-Light", size: 18)!
         cell.textLabel?.font = titleFont.font
         return cell
@@ -48,13 +42,8 @@ class listOfTrips: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            tripListItems.removeAtIndex(indexPath.row)
-            tripList.reloadData()
+            listOfRemindersItems.removeAtIndex(indexPath.row)
+            listOfReminders.reloadData()
         }
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tempTripID = indexPath.row
-    }
-    
 }

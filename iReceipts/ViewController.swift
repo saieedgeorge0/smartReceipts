@@ -7,8 +7,23 @@
 //
 
 import UIKit
-
+var receiptView = "all"
 class ViewController: UIViewController {
+
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    @IBAction func changeSegment(sender: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            receiptView = "all"
+        case 1:
+            receiptView = "personal"
+        case 2:
+            receiptView = "business"
+        default:
+            break;
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

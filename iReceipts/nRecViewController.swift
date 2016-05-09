@@ -98,6 +98,7 @@ class nRecViewController: UIViewController {
     @IBOutlet var nameOfTripOut: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround() 
         // Do any additional setup after loading the view, typically from a nib.
         var todaysDate:NSDate = NSDate()
         var dateFormatter:NSDateFormatter = NSDateFormatter()
@@ -241,68 +242,171 @@ class nRecViewController: UIViewController {
         nameOfTripOut.enabled = false
         nameOfTripOut.setTitle("", forState: UIControlState.Normal)
         
+        currentReceiptItems = []
+        receiptItemsList = []
+        receiptPriceItemsList = []
+        
         updateLabels = false
         finalReceiptImage = UIImage()
         self.performSegueWithIdentifier("backToReceiptsSegue", sender: self)
     }
     
     @IBAction func theSaveButton(sender: AnyObject) {
-        data.append([
-            "receiptImage": finalReceiptImage,
-            "receiptType": individualReceipt["receiptType"]!,
-            "receiptBackground": individualReceipt["receiptType"]!,
-            "receiptPageBackground": individualReceipt["receiptType"]!,
-            "receiptCost": purchasePrice.text!,
-            "purchaseMethod": individualReceipt["itemPayment"]!,
-            "cardType": individualReceipt["cardType"]!,
-            "purchaseDate": dateOut.titleLabel!.text!,
-            "returnBy": "",
-            "returnTime": returnInDays.text!,
-            "keeping": "Keeping it",
-            "noKeepSwitch": false,
-            "reminders": individualReceipt["reminders"]!,
-            "purchasedAt": purchasedAt.text!,
-            "address": address.text!,
-            "partOfTrip": individualReceipt["partOfTrip"]!,
-            "nameOfTrip": individualReceipt["nameOfTrip"]!,
-            "receiptName": itemPurchased.text!,
-            ])
-        print(data)
-        let image = UIImage(named: "personalf.png")as UIImage!
-        let image2 = UIImage(named: "businessuf.png")
-        personalOut.setBackgroundImage(image, forState: UIControlState.Normal)
-        businessOut.setBackgroundImage(image2, forState: UIControlState.Normal)
-        individualReceipt["receiptType"] = "Personal"
+        var purchaseTrue = false
+        var returnTrue = false
+        if let mFloat = Float(purchasePrice.text!) {
+            purchaseTrue = true
+        }
         
-        individualReceipt["itemName"] = ""
-        itemPurchased.text = ""
+        if let mInt = Int(returnInDays.text!) {
+            returnTrue = true
+        }
+        else {
+            returnInDays.text = ""
+        }
         
-        individualReceipt["itemPrice"] = ""
-        purchasePrice.text = ""
+        if returnInDays.text == "" {
+            returnTrue = true
+        }
         
-        individualReceipt["itemPayment"] = "Cash"
+        if (itemPurchased != "" && purchasePrice != "" && purchasedAt != "" && purchaseTrue && returnTrue) {
+            var textdate = ""
+            if returnInDays.text != "" {
+                var dateFormatter:NSDateFormatter = NSDateFormatter()
+                dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+                var date = dateFormatter.dateFromString(dateOut.titleLabel!.text!)
+                var newdate = NSCalendar.currentCalendar().dateByAddingUnit(
+                    .Day,
+                    value: Int(returnInDays.text!)!,
+                    toDate: date!,
+                    options: NSCalendarOptions(rawValue: 0))
+                textdate = dateFormatter.stringFromDate(newdate!)
+            }
+            data.append([
+                "receiptImage": finalReceiptImage,
+                "receiptType": individualReceipt["receiptType"]!,
+                "receiptBackground": individualReceipt["receiptType"]!,
+                "receiptPageBackground": individualReceipt["receiptType"]!,
+                "receiptCost": purchasePrice.text!,
+                "purchaseMethod": individualReceipt["itemPayment"]!,
+                "cardType": individualReceipt["cardType"]!,
+                "purchaseDate": dateOut.titleLabel!.text!,
+                "returnBy": textdate,
+                "returnTime": returnInDays.text!,
+                "keeping": "Keeping it",
+                "noKeepSwitch": false,
+                "reminders": individualReceipt["reminders"]!,
+                "purchasedAt": purchasedAt.text!,
+                "address": address.text!,
+                "partOfTrip": individualReceipt["partOfTrip"]!,
+                "nameOfTrip": individualReceipt["nameOfTrip"]!,
+                "receiptName": itemPurchased.text!,
+                "items": currentReceiptItems
+                ])
+            print(data)
+            
+            if (individualReceipt["reminders"] == true && listOfRemindersItems.count != 0) {
+                for i in listOfRemindersItems {
+                    print(i)
+                    print(returnInDays.text)
+                    if Int(i) < Int(returnInDays.text!)! {
+                        var dateFormatter:NSDateFormatter = NSDateFormatter()
+                        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+                        var dater = dateFormatter.dateFromString(dateOut.titleLabel!.text!)
+                        var newdater = NSCalendar.currentCalendar().dateByAddingUnit(
+                            .Day,
+                            value: Int(returnInDays.text!)!,
+                            toDate: dater!,
+                            options: NSCalendarOptions(rawValue: 0))
+                        var returningReminder = NSCalendar.currentCalendar().dateByAddingUnit(
+                            .Day,
+                            value: (-1 * Int(i)!),
+                            toDate: newdater!,
+                            options: NSCalendarOptions(rawValue: 0))
+                        
+                        guard let settings = UIApplication.sharedApplication().currentUserNotificationSettings() else { return }
+                        if settings.types == .None {
+                            let ac = UIAlertController(title: "Can't schedule", message: "Either we don't have permission to schedule notifications, or we haven't asked yet.", preferredStyle: .Alert)
+                            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                            presentViewController(ac, animated: true, completion: nil)
+                            return
+                        }
+                        
+                        let notification = UILocalNotification()
+                        notification.fireDate = returningReminder
+                        var daysLeft = Int(i)! + 1
+                        notification.alertBody = "You have " + String(daysLeft) + " days left to return your receipt, " + itemPurchased.text!
+                        notification.alertAction = "go to receipt"
+                        notification.soundName = UILocalNotificationDefaultSoundName
+                        notification.userInfo = ["CustomField1": "w00t"]
+                        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+                    }
+                }
+            }
+            
+            let image = UIImage(named: "personalf.png")as UIImage!
+            let image2 = UIImage(named: "businessuf.png")
+            personalOut.setBackgroundImage(image, forState: UIControlState.Normal)
+            businessOut.setBackgroundImage(image2, forState: UIControlState.Normal)
+            individualReceipt["receiptType"] = "Personal"
+            
+            individualReceipt["itemName"] = ""
+            itemPurchased.text = ""
         
-        cardTypeOut.enabled = false
-        cardTypeOut.setTitle("", forState: UIControlState.Normal)
+            individualReceipt["itemPrice"] = ""
+            purchasePrice.text = ""
         
-        individualReceipt["returnTime"] = ""
-        returnInDays.text = ""
+            individualReceipt["itemPayment"] = "Cash"
         
-        individualReceipt["reminders"] = true
+            cardTypeOut.enabled = false
+            cardTypeOut.setTitle("", forState: UIControlState.Normal)
         
-        individualReceipt["purchasedAt"] = ""
-        purchasedAt.text = ""
+            individualReceipt["returnTime"] = ""
+            returnInDays.text = ""
         
-        individualReceipt["address"] = ""
-        address.text = ""
+            individualReceipt["reminders"] = true
         
-        individualReceipt["partOfTrip"] = false
-        nameOfTripOut.enabled = false
-        nameOfTripOut.setTitle("", forState: UIControlState.Normal)
+            individualReceipt["purchasedAt"] = ""
+            purchasedAt.text = ""
+        
+            individualReceipt["address"] = ""
+            address.text = ""
+            
+            var today:NSDate = NSDate()
+            var dateFormatter:NSDateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            individualReceipt["purchaseDate"] = dateFormatter.stringFromDate(today)
+        
+            individualReceipt["partOfTrip"] = false
+            nameOfTripOut.enabled = false
+            nameOfTripOut.setTitle("", forState: UIControlState.Normal)
 
-        updateLabels = false
-        finalReceiptImage = UIImage()
-        self.performSegueWithIdentifier("backToReceiptsSegue", sender: self)
+            currentReceiptItems = []
+            receiptItemsList = []
+            receiptPriceItemsList = []
+        
+            updateLabels = false
+            finalReceiptImage = UIImage()
+            self.performSegueWithIdentifier("backToReceiptsSegue", sender: self)
+        }
+        else {
+            if (itemPurchased.text == "") {
+                itemPurchased.text = "Please enter a receipt name!"
+            }
+            if (purchasePrice.text == "") {
+                purchasePrice.text = "Please enter a valid cost!"
+            }
+            if (purchasedAt.text == "") {
+                purchasedAt.text = "Please enter a purchase location!"
+            }
+            if !purchaseTrue {
+                purchasePrice.text = "Please enter a valid cost!"
+            }
+            if !returnTrue {
+                returnInDays.text = ""
+            }
+        }
+    
     }
     
     

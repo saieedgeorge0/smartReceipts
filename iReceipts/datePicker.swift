@@ -25,6 +25,10 @@ class datePicker: UIViewController {
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        updateLabels = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
